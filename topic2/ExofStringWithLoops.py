@@ -13,7 +13,6 @@ if 'VRT' in product_ref:
 else:
     print(False)
 
-
 account_ref = "REF_ROOT_NN_AT"
 if 'ROOT' not in account_ref:
     print('its Child Account')

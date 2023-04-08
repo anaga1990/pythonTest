@@ -1,4 +1,4 @@
-dataList = [1,5,2,9,3]
+dataList = [1, 5, 2, 9, 3]
 print(dataList)
 dataList.sort()
 print(dataList)
@@ -6,7 +6,7 @@ print(dataList)
 dataList.sort(reverse=True)
 print(dataList)
 
-dataList = [1,14,13,3,2]
+dataList = [1, 14, 13, 3, 2]
 print(dataList)
 
 dataList.reverse()
