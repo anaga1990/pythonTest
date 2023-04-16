@@ -23,6 +23,12 @@ test list
     convert to number               ${data}
     log                             ${data}
 
+
+# robot -d reports -t "test Create Dictionary" ./rf/builtinEx1.robot
+test Create Dictionary
+    &{x} =                      create dictionary     1=wgs     2=wi    3=ng
+    log to console              ${x}
+
 get Time
     ${date1} =	Get Time	year	NOW
     log to console          ${date1}
@@ -38,4 +44,4 @@ get Time
     log to console          ${date6}
 
 
-Conditions IF
+

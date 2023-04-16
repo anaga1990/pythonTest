@@ -36,6 +36,7 @@ Test radioButtons Example3
     Open Chrome browser             https://www.letskodeit.com/practice
     select radio button             cars      bmwradio
     select radio button             cars      honda
+    radio button should be set to
 
 Test radioButtons Example4
     Open Chrome browser                     https://www.goibibo.com/
