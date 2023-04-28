@@ -6,10 +6,11 @@ Library    SeleniumLibrary
 # robot -d reports -t "Open Firefox" ./ui/browsers/letsOpenBrowsersWithSuppressLogs.robot
 *** Test Cases ***
 Open Chrome
-    open browser                    https://rahulshettyacademy.com/AutomationPractice/    chrome    options=add_experimental_option('excludeSwitches', ['enable-logging']); add_argument("--disable-popup-blocking"); add_argument("--ignore-certificate-errors"); add_experimental_option("detach", True)
+    open browser                    https://rahulshettyacademy.com/AutomationPractice/    chrome
+    ...  options=add_experimental_option('excludeSwitches', ['enable-logging']); add_argument("--ignore-certificate-errors"); add_experimental_option("detach", True)
     maximize browser window
     click element                   //input[@value='radio1']
-    close browser
+    #close browser
 
 
 Open Edge

@@ -1,14 +1,15 @@
 *** Settings ***
 Library             SeleniumLibrary
-Resource            ../common/browserManager.robot
+Resource            ./../common/browserManager.robot
 
+Test Setup          Open web browser                    ${GUI_URL}
 Test Teardown       close browser
 
 *** Variables ***
 ${GUI_URL}=         https://rahulshettyacademy.com/AutomationPractice/
 ${BROWSER}=         chrome
 ${HEDA_LESS} =      False
-${TEST_SPEED}=      0.5 s
+${TEST_SPEED}=      0 S
 
 
 
@@ -17,11 +18,11 @@ ${TEST_SPEED}=      0.5 s
 
 *** Test Cases ***
 Test Text with Alert Example
-    Open web browser                    ${GUI_URL}
-    input text                          //input[@id='name']             WGS         True
+    #Open web browser                    ${GUI_URL}
+    #input text                          id:name                         WGS         True
     click element                       //input[@id='confirmbtn']
-    ${alert_message}                    handle alert                    ACCEPT
-    log to console                      ${alert_message}
+    ${actual_alert_message}             handle alert                    ACCEPT
+    log to console                      ${actual_alert_message}
 
 
 

@@ -14,8 +14,8 @@ def calculate(val1, val2, opertaion):
 
 class Child1(Parent):
     def __init__(self, name, dob):
-        super().__init__(name, dob)
         self.name = name
+        super().__init__(name, dob)
         self.dob = dob
 
     def get_child_obj_data(self):
@@ -25,5 +25,5 @@ class Child1(Parent):
 c1 = Child1('Hanvik', '30-04-2020')
 c1.get_child_obj_data()
 c1.get_object_details()
-
-print(calculate(10, 20, 'sub'))
+#c1.calculate(10, 20, 'sub')
+#print(calculate(10, 20, 'sub'))

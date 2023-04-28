@@ -3,7 +3,7 @@
 
 *** Variables ***
 
-# robot -d reports ./rf/builtinEx2.robot
+# robot -t "test for loop" ./rf/builtinEx2.robot
 *** Test Cases ***
 test for loop
      @{data} =      create list     2021    2022    2023
@@ -12,17 +12,54 @@ test for loop
      END
 
 
-# robot -d reports -t "test for loop with IF conition" ./rf/builtinEx2.robot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# robot -t "test for loop with IF conition" ./rf/builtinEx2.robot
 test for loop with IF conition
      @{data} =      create list     2021    2022    2023    2024    2025    2026
-     FOR    ${x}    IN    @{data}
+     FOR   ${x}    IN               @{data}
            IF    ${x} == 2022
                 log to console    ${x}
            END
            log to console    out side IF Block
      END
 
-# robot -d reports -t "test for loop with IF conition with Break" ./rf/builtinEx2.robot
+
+
+
+
+
+
+
+
+
+
+
+
+
+# robot  -t "test for loop with IF conition with Break" ./rf/builtinEx2.robot
 test for loop with IF conition with Break
      @{data} =      create list     2021    2022    2023    2024    2025    2026
      FOR    ${x}    IN    @{data}
@@ -32,25 +69,62 @@ test for loop with IF conition with Break
            END
            log to console    \n out side IF Block  ${x}
      END
+     log to console     we are out from For loop
+
+
+
+
+
+
+
+
+
+
+
+
 
 # robot -d reports -t "test for loop with IF conition with Continue" ./rf/builtinEx2.robot
 test for loop with IF conition with Continue
-     @{data} =      create list     2021    2022    2023    2024    2025    2026
+     @{data} =      create list     2021    2022    2023    2024    2025    2026    2022
      FOR    ${x}    IN    @{data}
            IF    ${x} == 2022
                 log to console    =======> ${x}
                 CONTINUE
            END
+           comment    action 1
+           comment    action 2
+           comment    action 3
+           comment    action 4
+           comment    action 5
            log to console    \n out side IF Block ${x}
      END
+
+
+
+
+
 
 # robot -d reports -t "test for loop with IF conition and Continue in one Line" ./rf/builtinEx2.robot
 test for loop with IF conition and Continue in one Line
      @{data} =      create list     2021    2022    2023    2024    2025    2026
      FOR    ${x}    IN    @{data}
-           IF    ${x} == 2022    CONTINUE
+           IF    ${x} == 2022    log to console     ====> ${x}      CONTINUE
            log to console    ${x}
      END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # robot -d reports -t "test for loop with continue for loop if" ./rf/builtinEx2.robot
@@ -60,6 +134,20 @@ test for loop with continue for loop if
            continue for loop if   ${x} == 2023
            log to console  ${x}
      END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # robot -d reports -t "A simple while loop" ./rf/builtinEx2.robot
 A simple while loop
@@ -87,6 +175,8 @@ WHILE Loop with given limit is hit
     EXCEPT    WHILE loop was aborted    type=start
         log to console    The loop did not finish within the limit.
     END
+
+
 
 # robot -d reports -t "WHILE Loop condition evaluates to True or the default loop limit is hit" ./rf/builtinEx2.robot
 WHILE Loop condition evaluates to True or the default loop limit is hit

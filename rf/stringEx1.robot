@@ -30,12 +30,12 @@ Test05
 
 # robot -d reports -t "Test06" ./rf/stringEx1.robot
 Test06
-    ${x}=   generate random string      8-10	 [LETTERS]
+    ${x}=   generate random string      2-4	 [LETTERS]
     log to console    ${x}
 
 # robot -d reports -t "Test07" ./rf/stringEx1.robot
 Test07
-    ${x}=   generate random string      2-4	 [NUMBERS]
+    ${x}=   generate random string      9	 [NUMBERS]
     log to console    ${x}
 
 # robot -d reports -t "Test08" ./rf/stringEx1.robot
@@ -54,12 +54,14 @@ Test09
     ${get_SubElement}       get substring               ${x}    0   5
     log to console          ${get_SubElement}
 
+
 # robot -d reports -t "Test10" ./rf/stringEx1.robot
 Test10
     ${result} =    Replace String Using Regexp    Robot Framework    f.*k    Class
     log to console          ${result}
     log to console          "******************************************************"
     ${result} =    Replace String Using Regexp    Robot Framework    f.*k    Class      flags=IGNORECASE
+    log to console          ${result}
 
 # robot -d reports -t "Test11" ./rf/stringEx1.robot
 Test11

@@ -4,8 +4,8 @@ Library    String
 
 *** Variables ***
 ${GUI_URL}=         https://rahulshettyacademy.com/AutomationPractice/
-${BROWSER_NAME}=    Edge
-${HEAD_LESS} =      True
+${BROWSER_NAME}=    edge
+${HEAD_LESS} =      False
 ${TEST_SPEED}=      0 s
 
 
@@ -45,7 +45,6 @@ Open Custom Browser
             open browser
             ...     ${GUI_URL}
             ...     Edge
-            ...     options=add_experimental_option('excludeSwitches', ['enable-logging']); add_argument("--disable-popup-blocking"); add_argument("--ignore-certificate-errors"); add_experimental_option("detach", True);
         END
     ELSE IF    '${BROWSER}' == 'firefox'
         IF  ${HEAD_LESS}

@@ -31,6 +31,7 @@ TC03
 # robot -d reports -i "api4" ./RequestsLibrary-API/SimpleToolRentalAPI.robot
 TCFunctional
     [Tags]    api4
+    Run Check API Application Status
     Run Get all tools
     Run Register a new API client
     Run Create a new order
@@ -106,6 +107,7 @@ Run Get a single order before Update
     should be equal as strings      ${FULL_NAME}                     ${response.json()}[customerName]
     should not be true              ${response.json()}[processed]
     should be empty                 ${response.json()}[comment]
+
 
 Run Update an order
     ${json_data}                    create dictionary                comment=call me one order ready

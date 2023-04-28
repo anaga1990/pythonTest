@@ -35,15 +35,17 @@ Test Explict wait Example
 
 Test wait until page contains
     open web browser                   https://www.letskodeit.com/practice
-    wait until page contains           PPPractice Page                                      0.5 s
+    wait until page contains           BMW                                 10 s
+    click element                      id:bmwradio
 
 Test wait until page contains element
     open web browser                    https://www.letskodeit.com/practice
-    wait until page contains element    //input[@id='hondaradio22']                         1 ms                element not found with in time
+    wait until page contains element    id:bmwradio                         1 ms                element not found with in time
+    click element                       id:bmwradio
 
 Test wait until element contains
     open web browser                    https://www.letskodeit.com/practice
-    wait until element contains         //legend[normalize-space()='Checkbox Example']     CheckboxSS           1 s
+    wait until element contains         //legend[normalize-space()='Checkbox Example']          Checkbox           1 s
 
 Test wait until element does not contain
     open web browser                        https://www.letskodeit.com/practice
@@ -52,7 +54,9 @@ Test wait until element does not contain
 
 Test wait until element is enabled
     open web browser                        https://www.letskodeit.com/practice
-    wait until element is enabled           //input[@id='displayed-text']               1 s
+    #click element                           //input[@id='enabled-button']
+    #click element                           //input[@id='disabled-button']
+    wait until element is enabled           //input[@id='enabled-example-input']
 
 Test wait until element is not visible
     open web browser                        https://www.letskodeit.com/practice

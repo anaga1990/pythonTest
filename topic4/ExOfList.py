@@ -19,7 +19,7 @@ else:
 """
 add element to List
 """
-listOfNum = [0, 1, 2, 3, 4, 7]
+listOfNum = [0, 'hhs', 2, 3, 4, 7]
 print(listOfNum)
 
 """

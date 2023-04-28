@@ -19,7 +19,7 @@ Test Drag And Drop Example
     Open web browser                    ${GUI_URL}
     sleep    1 s
     select frame                        //iframe
-    drag and drop                       css:#draggable      css:#droppable
+    drag and drop                       css:div#draggable      css:#droppable
     sleep    2 s
 
 

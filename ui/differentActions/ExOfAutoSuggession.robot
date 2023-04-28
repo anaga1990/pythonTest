@@ -8,7 +8,7 @@ Test Teardown       close browser
 ${GUI_URL}=         https://rahulshettyacademy.com/AutomationPractice/
 ${BROWSER}=         chrome
 ${HEDA_LESS} =      False
-${TEST_SPEED}=      0.5 s
+${TEST_SPEED}=      0 s
 
 
 
@@ -18,12 +18,15 @@ ${TEST_SPEED}=      0.5 s
 *** Test Cases ***
 Test AutoSuggession Example
     Open web browser                    ${GUI_URL}
-    input text                          //input[@id='autocomplete']             ind
+    input text                          //input[@id='autocomplete']             in
     ${WebElements}                      Get WebElements                         //ul/li[@class='ui-menu-item']/div
     FOR   ${Element}    IN       @{WebElements}
-          log to console    ${Element.text}
+          #log to console    ${Element.text}
+          #${x}              Get Text        ${Element}
+          #log to console    ${x}
           IF     '${Element.text}' == 'India'
                   click element     ${Element}
+                  sleep    2s
                   BREAK
           END
     END

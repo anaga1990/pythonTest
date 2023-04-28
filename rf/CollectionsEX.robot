@@ -4,7 +4,7 @@ Library    Collections
 
 *** Variables ***
 @{car_list}=        Tata    Mahindra    Ford   Honda    Suzuki  kia
-
+&{data}=             1=Tata    3=Mahindra      4=Skoda     2=Suzuki    5=Hyundai   6=Toyota
 
 *** Test Cases ***
 # robot -d reports -t "Test01" ./rf/CollectionsEX.robot
@@ -12,7 +12,7 @@ Test01
     log to console              ${car_list}
     append to list              ${car_list}                 bmw
     log to console              ${car_list}
-    append to list              ${car_list}                 Toyota    Renault    kia   Audi   Hyundai
+    append to list              ${car_list}                 Toyota                      Renault         kia   Audi    Hyundai
     log to console              ${car_list}
     ${count}                    count values in list        ${car_list}                 kia
     log to console              "kia Count => ${count}
@@ -32,7 +32,7 @@ Test01
     remove values from list     ${sub_list}                 kia
     log to console              ${sub_list}
     remove from list            ${sub_list}                 0
-    log to console              ${sub_list}
+    log to console              ==>"remove from list" ${sub_list}
     list should contain sub list                            ${car_list}                 ${sub_list}
     log to console              ${sub_list}
     set list value              ${sub_list}                 0                           kia
@@ -48,22 +48,25 @@ Test01
 
 
 
-
+# &{data}=             1=Tata    3=Mahindra      4=Skoda     2=Suzuki    5=Hyundai   6=Toyota
 # robot -d reports -t "Test02" ./rf/CollectionsEX.robot
 Test02
-    ${data}             create dictionary       1=Tata    3=Mahindra      4=Skoda     2=Suzuki    5=Hyundai   6=Toyota
-    log to console      ${data}
-    ${k}                get dictionary keys     ${data}
-    log to console      ${k}
-    ${k}                get dictionary keys     ${data}    sort_keys=False
-    log to console      ${k}
-    ${v}                get dictionary values   ${data}
-    log to console      ${v}
-    ${v}                get dictionary values   ${data}    sort_keys=False
-    log to console      ${v}
-    ${pairData}         get dictionary items    ${data}
-    log to console      ${pairData}
-    ${pairData}         get dictionary items    ${data}    sort_keys=False
-    log to console      ${pairData}
-    set to dictionary   ${data}                 7          Honda
-    log to console      ${data}
+    log to console                  ${data}
+    ${k}                            get dictionary keys     ${data}
+    log to console                  ${k}
+    ${k}                            get dictionary keys     ${data}    sort_keys=False
+    log to console                  ${k}
+    ${v}                            get dictionary values   ${data}
+    log to console                  ${v}
+    ${v}                            get dictionary values   ${data}    sort_keys=False
+    log to console                  ${v}
+    ${pairData}                     get dictionary items    ${data}
+    log to console                  ${pairData}
+    ${pairData}                     get dictionary items    ${data}    sort_keys=False
+    log to console                  ${pairData}
+    set to dictionary               ${data}                 7          Honda
+    log to console                  ${data}
+    remove from dictionary          ${data}                 7          Honda
+    log to console                  ${data}
+    Pop From Dictionary             ${data}                 6
+    log to console                  ${data}

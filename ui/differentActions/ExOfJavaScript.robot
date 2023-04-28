@@ -19,7 +19,7 @@ ${TEST_SPEED}=      0.2 s
 Test JavaScript Example
     Open web browser                    ${GUI_URL}
     execute javascript                  window.scrollTo(0,document.body.scrollHeight)
-    sleep    0.2 s
+    sleep    2 s
     execute javascript                  window.scrollTo(0,-document.body.scrollHeight)
     execute javascript                  document.getElementById("checkBoxOption1").click();
     sleep    2 s
@@ -27,5 +27,9 @@ Test JavaScript Example
     sleep    2 s
     execute javascript                  window.scrollBy(0,150)
     sleep    2 s
+    execute javascript                  window.scrollBy(0,150)
+    sleep    500 ms
+    execute javascript                  window.scrollBy(0,150)
+    execute javascript                  window.scrollBy(0,150)
 
 

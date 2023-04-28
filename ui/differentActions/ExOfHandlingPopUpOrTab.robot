@@ -38,10 +38,37 @@ Test Action on PopUp Example
     wait until page contains            HOME
     maximize browser window
     ${child_window_title}               get window titles
-    ${actual_text}                      get text                            //span[contains(text(),'Become A Test Automation')]
+    ${actual_text}                      get text                            //h4[contains(text(),'JavaScript')]
+    log to console                      ${actual_text}
     close window
     switch window                       MAIN
     click element                       //input[@id='bmwcheck']
+
+
+
+Test Action on PopUp Example1
+    Open web browser                    ${GUI_URL}
+    ${parent_window_title}              get window titles
+    click element                       //button[@id='openwindow']
+    ${get_all_windows}                  get window handles
+    switch window                       1
+    wait until page contains            HOME
+    maximize browser window
+    ${child_window_title}               get window titles
+    ${actual_text}                      get text                            //h4[contains(text(),'JavaScript')]
+    log to console                      ${actual_text}
+    close window
+    switch window                       MAIN
+    click element                       //input[@id='bmwcheck']
+
+
+
+
+
+
+
+
+
 
 Test Action on Tab Example
     Open web browser                    ${GUI_URL}
@@ -52,10 +79,18 @@ Test Action on Tab Example
     wait until page contains            HOME
     maximize browser window
     ${child_window_title}               get window titles
-    ${actual_text}                      get text                            //span[contains(text(),'Become A Test Automation')]
+    ${actual_text}                      get text                            //h4[contains(text(),'JavaScript')]
     close window
     switch window                       MAIN
     click element                       //input[@id='bmwcheck']
+
+
+
+
+    switch window                       NEW
+    CLOSE WINDOW
+    switch window                       MAIN
+
 
 
 Test handling popup or tab Example
@@ -67,6 +102,14 @@ Test handling popup or tab Example
     close window
     switch window                       MAIN
     click element                       //input[@id='bmwcheck']
+
+
+
+
+
+
+
+
 
 
 *** Keywords ***
